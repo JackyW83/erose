@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+        <style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;}</style>
+    </defs>
+    <title>railroad-metro</title>
+    <path class="a" d="M12,.509c14,0,8,19,0,19S-2,.509,12,.509Z"/>
+    <path class="a" d="M7.224,8.938a1,1,0,0,0,.894.553h7.764a1,1,0,0,0,.894-.553l1-2a1,1,0,0,0-.894-1.447H7.118a1,1,0,0,0-.894,1.447Z"/>
+    <path class="a" d="M15.344,18.386c1.762-2.365-.243-5.377-3.345-5.377s-5.105,3.016-3.343,5.377"/>
+    <line class="a" x1="0.5" y1="23.491" x2="4.633" y2="13.105"/>
+    <line class="a" x1="19.345" y1="13.159" x2="23.5" y2="23.491"/>
+    <line class="a" x1="1.296" y1="21.491" x2="22.696" y2="21.491"/>
+    <line class="a" x1="16.441" y1="17.491" x2="21.087" y2="17.491"/>
+    <line class="a" x1="2.888" y1="17.491" x2="7.559" y2="17.491"/>
+</svg>

@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Erose
+    </title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Erose diamond">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" color="#fe6a6a" href="safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+   
+    <style> 
+      div.cz-sidebar {
+        max-width: none;
+      }
+      .simplebar-content > li.cz-filter-item  {
+	 display: inline-block !important
+      }
+      .short {
+        display: inline-block !important;
+        width: 70px;
+      }
+      .middle {
+        display: inline-block !important;
+        width: 136px;
+      }
+      .simplebar-content {
+        padding: 4px 8px 0px 0px"
+      }
+      .search-short {
+        padding-bottom: .2rem !important;
+        margin-top: -16px;
+      }
+      .widget-title {
+        /* margin-bottom: .2rem; */
+        min-width: 120px;
+        line-height: 36px;
+
+      }
+      .pb-4, .py-4 {
+        padding-bottom: .5rem !important;
+      }
+      .d-block {
+        display: inline-block !important;
+        margin-right: 6px;
+      }
+      .czi-map{
+        height: 20px;
+      }
+      .navbar-expand-lg  {
+        padding-bottom: 8px;
+      }
+      .product-skeleton-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #e3e9ef;
+    padding-top: 16px;
+   padding-bottom: 16px;
+}
+      
+      @media (max-width: 991.98px) {
+	div.cz-sidebar-body {
+        padding-right: 0px !important;
+      }
+       #shop-sidebar {
+    max-width: 318px;
+       }
+        #logo_text {
+          margin-top: -8px;
+        }
+
+   .product-skeleton-container {
+       align-items:flex-start;
+       flex-direction:column;
+     }
+
+    .product-skeleton-container > .skeleton-pulse {
+ 	margin-bottom: 0px      
+      }
+}
+      .skeleton-pulse {
+        height: 40px; 
+        background-color: #eaeaea;
+        width: 230px;
+        border-radius: 5px;
+        margin-bottom: 16px;
+        margin-top: 8px;
+        animation: skeleton-pulse 1.5s ease-in-out 0.5s infinite;
+      }
+      @keyframes skeleton-pulse{0%{opacity:1}50%{opacity:.4}100%{opacity:1}}
+    </style>
+<script src="https://cdn.bootcss.com/axios/0.19.2/axios.min.js"></script>
+<script src="./js/feathers.js"></script>
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  
+</head>
+  <!-- Body-->
+  <body>
+    <script defer src="https://cdn.bootcss.com/core-js/2.6.11/core.min.js"></script>
+    <script defer src="./js/handlebars.min.js"></script>
+
+    <header class="bg-light box-shadow-sm navbar-sticky" style="margin-top: -15px;">
+      <div　style="padding: 0px" class="navbar navbar-expand-lg navbar-light">
+        <div class="container"><a class="navbar-brand d-none d-sm-block mr-4 order-lg-1" href="property-list-ls.html" style="min-width: 7rem;">
+
+</a>
+         
+          <a style="position: absolute; top: 16px; width: 120px " href="index.html"> 
+            <img style="height: 50px; margin-top: 10px;" src="img/logo.svg" alt="erose /">
+          </a>
+          <div style="height: 70px" class="navbar-toolbar collapse d-flex align-items-center order-lg-3" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <!-- <li id="nav-rent"　class="nav-item"><a class="nav-link dropdown-toggle" href="index.html?tag=rent">整租</a></li>
+              <li id="nav-share" class="nav-item"><a  class="nav-link dropdown-toggle" href="index.html?tag=share">合租</a></li>
+              <li id="nav-highend" class="nav-item"><a  class="nav-link dropdown-toggle" href="index.html?tag=highend">涉外高端</a></li>
+              <li id="nav-aboutus" class="nav-item"><a  class="nav-link dropdown-toggle" href="aboutus.html">关于我们</a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Page Title (Shop)-->
+    <div  class="page-title-overlap bg-dark pt-4">
+      <div class="container d-lg-flex justify-content-between py-2 py-lg-3" style="padding: 0px !important;">
+        <div class="order-lg-1 pr-lg-4 text-center text-lg-left">
+          <h1 style="padding: 1em 0px;" class="h3 text-light mb-0">White diamond</h1>
+        </div>
+      </div>
+    </div>
+    <!-- Page Content-->
+    <div class="container pt-4 pb-5 mb-2 mb-md-4">
+
+      <div class="bg-light box-shadow-lg rounded-lg p-4 mt-n5 mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+           <!-- <div class="dropdown mr-2"><a class="btn btn-outline-secondary dropdown-toggle" href="#shop-filters" data-toggle="collapse"><i class="czi-filter mr-2"></i>Filters</a></div>  -->
+         
+        </div>
+        <!-- Toolbar with expandable filters-->
+        <div id="filter-container">
+         
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Content  -->
+        <section class="col-lg-12">
+          <!-- Toolbar-->
+          <div class="d-flex justify-content-center justify-content-sm-between align-items-center pt-2 pb-4 pb-sm-5">
+            <div class="d-flex flex-wrap" style="margin-top: -16px">
+                <div class="form-inline flex-nowrap mr-3 mr-sm-4 pb-3">
+                    <label class="text-light opacity-75 text-nowrap mr-2 d-none d-sm-block" for="sorting">排序:</label>
+                    <select onchange="getApartmentsByQuery()" class="form-control custom-select" id="sorting">
+                      <option value="weight１">Carat Weight from high to low</option>
+                      <option value="weight2">Carat Weight from low to high</option>
+                      <option value="price1">Price from high to low</option>
+                      <option value="price2">Price from low to high</option>
+                      <option value="color1">Color from high to low</option>
+                      <option value="color2">Color from low to high</option>
+                      <option value="clarity1">Clarity from high to low</option>
+                      <option value="clarity２">Clarity from low to high</option>
+                    </select><span id="product-count" 
+                    class="font-size-sm text-light opacity-75 text-nowrap ml-2 d-none d-md-block"></span>
+                  </div>
+                  <div class="d-flex"><a class="nav-link-style mr-3" href="#"><i class="czi-arrow-left"></i></a><span class="font-size-md">1 / 5</span><a class="nav-link-style ml-3" href="#"><i class="czi-arrow-right"></i></a></div>
+                  <!-- <div class="d-none d-sm-flex"><a class="btn btn-icon nav-link-style bg-primary text-light disabled opacity-100 mr-2" href="#"><i class="czi-view-grid"></i></a><a class="btn btn-icon nav-link-style" href="shop-list-ft.html"><i class="czi-view-list"></i></a></div> -->
+              <div class="form-inline flex-nowrap mr-3 mr-sm-4 pb-3"></div>
+            </div>
+            <div id="paginationTop">   </div>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Shape</th>
+                    <th>Carat Weight</th>
+                    <th>Color</th>
+                    <th>Clarity</th>
+                    <th>Certificate</th>
+                    <th>Cut Grade</th>
+                    <th>Polish</th>
+                    <th>Symmetry</th>
+                    <th>Price</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="productList">
+                  
+                </tbody>
+              </table>
+            </div>
+          <div>
+	   
+       <!-- <div class="product-skeleton-container">
+                  <div class="skeleton-pulse" style="height: 180px;width: 340px;"> </div>
+                   <div>
+                  <div class="skeleton-pulse" style="height: 50px"> </div>
+                  <div class="skeleton-pulse" style="height: 30px"> </div></div>
+                  <div class="skeleton-pulse" style="height: 30px;width: 120px;"> </div>
+              </div>
+<div class="product-skeleton-container">
+                  <div class="skeleton-pulse" style="height: 180px;width: 340px;"> </div>
+                   <div>
+                  <div class="skeleton-pulse" style="height: 50px"> </div>
+                  <div class="skeleton-pulse" style="height: 30px"> </div></div>
+                  <div class="skeleton-pulse" style="height: 30px;width: 120px;"> </div>
+              </div>
+
+
+<div class="product-skeleton-container">
+                  <div class="skeleton-pulse" style="height: 180px;width: 340px;"> </div>
+                   <div>
+                  <div class="skeleton-pulse" style="height: 50px"> </div>
+                  <div class="skeleton-pulse" style="height: 30px"> </div></div>
+                  <div class="skeleton-pulse" style="height: 30px;width: 120px;"> </div>
+              </div>
+
+
+<div class="product-skeleton-container">
+                  <div class="skeleton-pulse" style="height: 180px;width: 340px;"> </div>
+                   <div>
+                  <div class="skeleton-pulse" style="height: 50px"> </div>
+                  <div class="skeleton-pulse" style="height: 30px"> </div></div>
+                  <div class="skeleton-pulse" style="height: 30px;width: 120px;"> </div>
+              </div> -->
+          </div>
+          <div id="pagination"></div>
+        </section>
+      </div>
+    </div>
+    <!-- Toast: Added to Cart-->
+    <div class="toast-container toast-bottom-center">
+      <div class="toast mb-3" id="cart-toast" data-delay="5000" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white"><i class="czi-check-circle mr-2"></i>
+          <h6 class="font-size-sm text-white mb-0 mr-auto">Added to cart!</h6>
+          <button class="close text-white ml-2 mb-1" type="button" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="toast-body">This item has been added to your cart.</div>
+      </div>
+    </div>
+    <script type="text/template" id="newsListTemplate">
+      <!--each遍历json数组-->
+      {{#each this}}
+      <tr>
+          <td> <img style="height: 20" src="img/SVGs/shapes/round.svg" /></td>
+          <td>1.52</td>
+          <td>D</td>
+          <td>FL</td>
+          <td>GIA</td>
+          <td>EX</td>
+          <td>EX</td>
+          <td>EX</td>
+          <td>663,785.38€ </td>
+          <td><button type="button" class="btn btn-primary">Show More</button> </td>
+        </tr>
+      {{/each}}
+      
+    </script>
+    <script type="text/template" id="paginationTemplate">
+      <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="javascript:changePage({{currentPage}}-1)"><i class="czi-arrow-left mr-2"></i>上一页</a></li>
+        </ul>
+        
+        <ul class="pagination">
+          <li class="page-item d-sm-block"><span class="page-link page-link-static">{{currentPage}} / {{totalPages}}</span></li>
+      
+          {{!-- <li class="page-item d-sm-none"><span class="page-link page-link-static">{{currentPage}} / {{totalPages}}</span></li> 
+          <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">1<span class="sr-only">(current)</span></span></li>
+          <li class="page-item d-none d-sm-block"><a class="page-link" href="#">2</a></li>
+          <li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
+          <li class="page-item d-none d-sm-block"><a class="page-link" href="#">8</a></li>
+          --}}
+        </ul>
+        <ul class="pagination">
+           <li class="page-item"><a class="page-link" href="javascript:changePage({{currentPage}}+1)" aria-label="Next">下一页<i class="czi-arrow-right ml-2"></i></a></li>
+       </ul>
+      </nav>
+      
+    </script>
+    <script type="text/template" id="paginationTopTemplate">
+      <div class="d-flex pb-3">
+      <a class="nav-link-style nav-link-light mr-3 pt-1" href="javascript:changePage({{currentPage}}-1)"><i class="czi-arrow-left"></i></a>
+      <span class="font-size-md text-light">{{currentPage}} / {{totalPages}}</span>
+      <a class="nav-link-style nav-link-light ml-3 pt-1" href="javascript:changePage({{currentPage}}+1)"><i class="czi-arrow-right"></i></a>
+      </div>
+      
+      
+      
+    </script>
+    <script>
+      var data;
+      const fsClients = client.service("apartments");
+      //{query:{"props['0d8dfadb-593e-4fc9-9396-38d446a42fbf']":"高楼层"} }
+      
+      function changePage(pageIndex){
+        let pageInfo=$("#hidPageInfo").val()?JSON.parse($("#hidPageInfo").val()):null;
+        if(pageIndex>0 && pageIndex <= pageInfo.totalPages){
+          pageInfo.currentPage=pageIndex
+          $("#hidPageInfo").val(JSON.stringify(pageInfo));
+          getApartmentsByQuery();
+        }
+      }
+      
+      function getApartmentsByQuery(propid,propvalue){
+        let query={};
+        sessionStorage.getItem('query')
+        query.query= sessionStorage.getItem('query')?JSON.parse(sessionStorage.getItem('query')):{};
+       
+        let pageInfo=$("#hidPageInfo").val()?JSON.parse($("#hidPageInfo").val()):null;
+      
+        if(propid && propvalue){
+          var obj={}
+          obj["props['"+propid+"']"]=propvalue
+          query.query=obj;
+        }
+        query.query.type = { '$in': getType() }
+        query.query['$sort'] = {
+          createdAt: -1
+        }
+        //每页显示
+        query.query["$limit"]=15
+        if(pageInfo){
+          query.query["$skip"]= (pageInfo.currentPage -1) * query.query["$limit"]
+        }
+        else{
+          query.query["$skip"]=0;
+        }
+        let sort = $('#sorting').val();
+
+        query.query['$sort'] = sort == "createdAt" ? {createdAt: -1} :
+                    sort == "price1" ? {price: 1} :
+                    sort == "price2" ? {price: -1} : {size: -1}
+      
+        //{query:{"price":{"$and":{"$gte":min,"$lte":max}}}}
+        fsClients.find(query).then((response)=>{ 
+          displayHouse(response) 
+        });
+      }
+      $(document).ready(function(){
+          getApartmentsByQuery();
+
+          $('#qr').on('mouseenter', function() {
+            $('#wechat-qr').css('display', 'block')
+          } );
+          $('#qr').on('mouseleave', function() {
+            $('#wechat-qr').css('display', 'none')
+          });
+      });
+
+      function getType () {
+        let t = ['整租', '高端']
+        let type = window.location.search.replace('?tag=', '');
+          if (type == 'highend') {
+            $('#nav-highend').toggleClass('active')
+            t = ['高端']
+          } else if (type == 'share') {
+            $('#nav-share').toggleClass('active')
+            t = ['合租']
+          } else {
+            $('#nav-rent').toggleClass('active')
+          }
+          return t;
+      }
+
+      function displayHouse(response) {
+        let data=response
+          $('#product-count').html('共'+ response.total + '套房源')
+          response.data.forEach(d => {
+            Object.keys(d.attributes).forEach(key => {
+              d[d.attributes[key].name] = d.attributes[key].value;
+            })
+          })
+         //列表模板
+         var tpl = $("#newsListTemplate").html();
+          var template = Handlebars.compile(tpl);
+          var html = template(response.data);
+          $("#productList").html(html);
+      
+          //翻页模板
+          let currentPage = Math.floor(response.skip / response.limit) + 1;
+          let pageSize = response.limit
+          let totalPages = Math.ceil(response.total / response.limit)
+          let pages=new Array();
+          pageInfo={"currentPage":currentPage,"pageSize":pageSize,"totalPages":totalPages};
+          $("#hidPageInfo").val(JSON.stringify(pageInfo));
+    
+          var tpl = $("#paginationTemplate").html();
+          var template = Handlebars.compile(tpl);
+          var html = template(pageInfo);
+          $("#pagination").html(html);
+      
+          var tpl = $("#paginationTopTemplate").html();
+          var template = Handlebars.compile(tpl);
+          var html = template(pageInfo);
+          $("#paginationTop").html(html);
+      }
+
+      function openSidebar() {
+        $('.cz-handheld-toolbar').css('transform', 'translateY(100%)')
+      }
+
+      $( window ).unload(function() {
+       　sessionStorage.removeItem('query')
+      });
+    </script>
+
+
+    <!-- Footer-->
+    <footer class="bg-dark pt-5">
+      <div class="container">
+          <div class="row pb-2">
+            <div class="col-md-6 pb-4  text-white text-center text-md-left">© All rights reserved. Made by <a class="text-light" href="#" target="_blank">EROSE</a>
+             　<br />
+             <p style="font-size: 15px;">
+              <i class="czi-support"></i><span class="mr-1">Phone</span><a class="topbar-link" href="tel:13764866831">86-239238283</a></p>
+            </div>
+          
+            <!-- <div class="col-md-6 text-center text-md-right mb-4">
+                <span style="color: #fff; font-size: 13px"> 微信二维码</span>
+              <div class="mb-3"> 
+                 
+                  <img id="wechat-qr" style=" width: 120px; box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px" src="img/qr.jpg" />
+            </div>
+          </div> -->
+      </div>
+    </footer>
+    <!-- Toolbar for handheld devices-->
+    <div class="cz-handheld-toolbar">
+      <div class="d-table table-fixed w-100"><a onclick="openSidebar()" class="d-table-cell cz-handheld-toolbar-item" href="#shop-sidebar" data-toggle="sidebar"><span class="cz-handheld-toolbar-icon"><i class="czi-filter-alt"></i></span><span class="cz-handheld-toolbar-label">筛选</span></a><a class="d-table-cell cz-handheld-toolbar-item" href="#navbarCollapse" data-toggle="collapse" onclick="window.scrollTo(0, 0)"><span class="cz-handheld-toolbar-icon"><i class="czi-menu"></i></span><span class="cz-handheld-toolbar-label">菜单</span></a>
+      </div>
+    </div>
+    <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon czi-arrow-up">   </i></a>
+    <!-- JavaScript libraries, plugins and custom scripts-->
+    <script defer src="js/vendor.min.js"></script>
+    <script defer src="js/theme.min.js"></script>
+
+    <script defer src="https://cdn.bootcss.com/react/16.13.1/umd/react.production.min.js" crossorigin></script>
+    <script defer src="https://cdn.bootcss.com/react-dom/16.13.1/umd/react-dom.production.min.js" crossorigin></script>
+    <script defer src="build/filter.js"></script>
+	 <link rel="stylesheet" media="screen" href="css/vendor.min.css">
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" id="main-styles" href="css/theme.min.css">  
+</body>
+</html>

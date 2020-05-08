@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  div.py-md-3 {
+    margin: 0 0 !important;
+    padding: 1rem 0 0 0 !important;
+  }
+
+  #amapContainer .compound-name {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    line-height: 24px;
+    border-radius: 2px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    background-color: #5184f9;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    font-weight: 900;
+  }
+
+  #amapContainer .compound-name .arrow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: -5px;
+    left: 50%;
+    background: #5184f9;
+    margin-left: -5px;
+    display: inline-block;
+    box-shadow: 0 0 6px 0 rgba(13, 4, 9, 0.2);
+    transform: rotate(45deg);
+  }
+
+  #amapContainer .compound-name:before {
+    content: '';
+    width: 18px;
+    height: 12px;
+    background: #5184f9;
+    position: absolute;
+    bottom: 1px;
+    left: 40%;
+    z-index: 2;
+  }
+
+  #amapContainer .compound-name:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #5184f9;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    margin-left: -5px;
+  }
+</style>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=yes" />
+  <title>上海租赁房源
+  </title>
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Cartzilla - Bootstrap E-commerce Template">
+  <meta name="keywords"
+    content="bootstrap, shop, e-commerce, market, modern, responsive,  business, mobile, bootstrap 4, html5, css3, jquery, js, gallery, slider, touch, creative, clean">
+  <meta name="author" content="Createx Studio">
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" color="#fe6a6a" href="safari-pinned-tab.svg">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <script src="https://cdn.bootcss.com/axios/0.19.2/axios.min.js"></script>
+  <script src="./js/feathers.js"></script>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+</head>
+<!-- Body-->
+
+<body>
+  <!-- Navbar 1 Level (Light)-->
+  <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+
+  <header class="bg-light box-shadow-sm navbar-sticky" style="margin-top: -15px;">
+    <div　style="padding: 0px" class="navbar navbar-expand-lg navbar-light">
+      <div class="container"><a class="navbar-brand d-none d-sm-block mr-4 order-lg-1" href="property-list-ls.html" style="min-width: 7rem;"><img style="display: none;" width="142" src="img/logo-dark.png" alt="Cartzilla"/></a>
+        <a href="index.html"> <p style="font-size: 16px; font-weight: 700; color: #373f50">SHZLFY</p></a>
+        <a style="position: absolute; top: 16px; width: 120px " href="index.html"> 
+           <p id="logo_text" style="position: absolute; top: 26px; font-size: 14px; color:#4b566b ">
+            上海租赁房源
+           </p></a>
+        <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+          <div class="topbar-text text-nowrap d-none d-md-inline-block" style="position: relative " ><i class="czi-support"></i><span class="text-muted mr-1"  >联系电话</span><a style="font-weight: 500; color: #373f50 !important" class="topbar-link" href="tel:13764866831">13764866831</a>
+            <img id="qr" style="height: 30px; margin-top: -5px" src="img/qr-code.svg" />
+            <img id="wechat-qr" style="z-index: 1000; display: none; position: absolute; width: 160px; top: 50px; right: 10px; box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px" src="img/qr.jpg" />
+          </div>
+        </div>
+        <div class="collapse navbar-collapse mr-auto order-lg-2" id="navbarCollapse">
+          <!-- Primary menu-->
+          <ul class="navbar-nav">
+            <li id="nav-rent"　class="nav-item"><a class="nav-link dropdown-toggle" href="index.html?tag=rent">整租</a></li>
+            <li id="nav-share" class="nav-item"><a  class="nav-link dropdown-toggle" href="index.html?tag=share">合租</a></li>
+            <li id="nav-highend" class="nav-item"><a  class="nav-link dropdown-toggle" href="index.html?tag=highend">涉外高端</a></li>
+            <li id="nav-aboutus" class="nav-item"><a  class="nav-link dropdown-toggle" href="aboutus.html">关于我们</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Title (Shop)-->
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+      </div>
+      <div class="order-lg-1 pr-lg-4 text-center text-lg-left">
+        <h1 class="h3 text-light mb-0" id="detailTitle">详情页</h1>
+      </div>
+    </div>
+  </div>
+  <!-- Page Content-->
+  <div class="container">
+    <!-- Gallery + details-->
+    <div class="bg-light box-shadow-lg rounded-lg px-4 py-3 mb-5">
+      <div class="px-lg-3">
+        <div class="row">
+          <!-- Product gallery-->
+          <div class="col-lg-12 pr-lg-0 pt-lg-4" id="productGallery" style="padding:0px;"> </div>
+          <!-- Product details-->
+          <!-- <div class="col-lg-5 pt-4 pt-lg-0" id="productDetail"></div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Product description section 1-->
+    <!-- <h2 class="h3 mb-4 pb-2">房屋信息</h2> -->
+    <div id="basicInfo"></div>
+    <div class="col-lg-12 col-md-6 py-md-3 order-md-1 row  border-bottom">
+      <div class="col-lg-3 col-md-6 order-md-1">
+        <h4 class="mb-4 pb-2">周边配套</h4>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-6 order-md-1">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"><a class="nav-link active" href="#jiaotong" data-toggle="tab" role="tab"
+            onclick="SearchPlace('地铁站','jiaotong')">
+            <div>交通</div>
+          </a></li>
+        <li class="nav-item"><a class="nav-link" href="#jiaoyu" data-toggle="tab" role="tab"
+            onclick="SearchPlace('幼儿园','jiaoyu')">
+            <div>教育</div>
+          </a></li>
+        <li class="nav-item"><a class="nav-link" href="#yiliao" data-toggle="tab" role="tab"
+            onclick="SearchPlace('医疗保健服务','yiliao')">
+            <div>医疗</div>
+          </a></li>
+        <li class="nav-item"><a class="nav-link" href="#gouwu" data-toggle="tab" role="tab"
+            onclick="SearchPlace('购物服务','gouwu')">
+            <div>购物</div>
+          </a></li>
+        <li class="nav-item"><a class="nav-link" href="#shenghuo" data-toggle="tab" role="tab"
+            onclick="SearchPlace('银行','shenghuo')">
+            <div>生活</div>
+          </a></li>
+        <li class="nav-item"><a class="nav-link" href="#yule" data-toggle="tab" role="tab"
+            onclick="SearchPlace('电影院','yule')">
+            <div>娱乐</div>
+          </a></li>
+      </ul>
+      <div class="tab-content text-muted font-size-sm">
+        <div class="tab-pane fade show active" id="jiaotong" role="tabpanel">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('地铁站')">
+                <div>地铁站</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link " href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('公交车站')">
+                <div>公交站</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="jiaoyu" role="tabpanel">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('幼儿园')">
+                <div>幼儿园</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link " href="#" data-toggle="tab" role="tab" onclick="SearchPlace('小学')">
+                <div>小学</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link " href="#" data-toggle="tab" role="tab" onclick="SearchPlace('中学')">
+                <div>中学</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link " href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('高等院校')">
+                <div>大学</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="yiliao" role="tabpanel">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('医疗保健服务')">
+                <div>医院</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link " href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('医药保健销售店')">
+                <div>药店</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="gouwu" role="tabpanel">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('购物服务')">
+                <div>全部</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="shenghuo" role="tabpanel">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('银行')">
+                <div>银行</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link " href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('自动提款机')">
+                <div>ATM</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link " href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('餐饮服务')">
+                <div>餐饮</div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="yule" role="tabpanel">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('电影院')">
+                <div>电影院</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('公园|公园广场')">
+                <div>公园</div>
+              </a></li>
+            <li class="nav-item"><a class="nav-link " href="#" data-toggle="tab" role="tab"
+                onclick="SearchPlace('运动场馆')">
+                <div>运动场馆</div>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="amapPanel"></div>
+    </div>
+    <div class="col-12 mb-4 border-bottom " id="amapContainer" style="width:100%;height:500px;"></div>
+    <div id="nearbyCompound"></div>
+  </div>
+  <style>
+    .left-navi {
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      left: 0px;
+      background-image: url(img/prev.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    .right-navi {
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      right: 0px;
+      background-image: url(img/next.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    .detail-pictviewer {
+      /* height: 630px; */
+    }
+
+    .detail-pict-present {
+      max-width: 100%;
+      position: relative;
+    }
+
+    div[class="detail-pict-present compound"] {
+      z-index: 1;
+    }
+
+    div[class="detail-pict-navi compound"] {
+      height: 1px !important;
+      z-index: 0;
+    }
+
+    .detail-pict-present img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .detail-pict-navi {
+      float: left;
+      width: 100%;
+      height: 25%;
+      background-color: rgb(255, 255, 255);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .detail-pict-navi ul {
+      /* width:100%; */
+      height: 100%;
+      list-style-type: none;
+      position: absolute;
+      left: 0px;
+    }
+
+    .detail-pict-navi li {
+      /* width:20%; */
+      height: 100%;
+      float: left;
+    }
+
+    .detail-pict-navi img {
+      margin: 5px;
+      border: 3px solid rgb(255, 255, 255);
+      float: left;
+      max-width: 90%;
+    }
+
+    .detail-pict-navi img.selected {
+      margin: 5px;
+      border: 3px solid rgb(83, 181, 10);
+      float: left;
+      max-width: 90%;
+    }
+  </style>
+  <script>
+    var Request = { QueryString: function (item) { var svalue = location.search.match(new RegExp("[\?\&]" + item + "=([^\&]*)(\&?)", "i")); return svalue ? svalue[1] : svalue; } }
+    var cpoint; //中心点坐标
+    var compoundname; //中心点坐标
+    var placeSearch;
+    var map;
+    function SearchPlace(type, element) {
+      if (element) {
+        $('#' + element + " li:first a").tab("show")
+      }
+      map.clearMap();
+      document.getElementById("amapPanel").innerHTML = ""
+      placeSearch.setPageIndex(1)
+      placeSearch.setType(type)
+      placeSearch.searchNearBy('', cpoint, 1000, function (status, result) {
+        console.log(result)
+        //placeSearch.poiOnAMAP(result.poiList.pois[0])
+      });
+
+      var markerContent = `<div class="compound-name">${compoundname}<i class="arrow"></i></div>`
+      //标记小区begin
+      // 创建一个 Marker 实例：
+      var marker = new AMap.Marker({
+        position: new AMap.LngLat(cpoint[0], cpoint[1]),
+        content: markerContent,
+        title: compoundname,
+        offset: new AMap.Pixel(2, -63) // 相对于基点的偏移位置
+      });
+
+      // 将创建的点标记添加到已有的地图实例：
+      map.add(marker);
+
+      // //标记小区begin
+      // // 创建一个 Marker 实例：
+      // var marker2 = new AMap.Marker({
+      //   position: new AMap.LngLat(cpoint[0], cpoint[1]),
+      //   title: compoundname,
+      // });
+
+      // // 将创建的点标记添加到已有的地图实例：
+      // map.add(marker2);
+      // //标记小区end
+    }
+
+  </script>
+  <script type="text/javascript" id="HandleBarHelper">
+    function registerHandlebarsHelper() {
+      Handlebars.registerHelper("isBasicInfo", function (type, options) {
+        if (type == "一般属性" && "室|卫|厅".indexOf(this.name) < 0) return options.fn(this);
+        else return options.inverse(this);
+      });
+      Handlebars.registerHelper("isFacilities", function (type, options) {
+        if (type == "家具") return options.fn(this);
+        else return options.inverse(this);
+      });
+
+      Handlebars.registerHelper('html', function (html) {
+        var str = html;
+        return new Handlebars.SafeString(str);
+      });
+      Handlebars.registerHelper('showFloor', function (floor, total_floor) {
+        var str = `${floor}/${total_floor}层`;
+        if (floor && total_floor) {
+          return str;
+        }
+        else {
+          return "暂无";
+        }
+      });
+      Handlebars.registerHelper('getAttributeByName', function (attribtutes, name, options) {
+        let value = null
+        Object.keys(attribtutes).forEach(key => {
+          if (attribtutes[key].name == name) {
+            value = attribtutes[key].value
+          }
+        })
+        if (value) {
+          return value
+        }
+        else {
+          return "暂无"
+        }
+      });
+    }
+
+  </script>
+
+  <script type="text/template" id="productDetailTemplate">
+  <div class="product-details ml-auto pb-3">
+    <div class="d-flex justify-content-between align-items-center mb-2"></div>
+    <div class="mb-3"><span class="h3 font-weight-normal text-accent mr-1">{{price}}<small>元/月</small></span></div>
+    <div class="font-size-sm mb-4"><span class="text-heading font-weight-medium mr-1">小区名称:</span><span class="text-muted">{{compound.name}}</span></div>
+    <div class="font-size-sm mb-4"><span class="text-heading font-weight-medium mr-1">房屋大小:</span><span class="text-muted">{{size}}㎡</span></div>
+    <!-- 联系方式-->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">联系方式</h5>
+        <p class="card-text font-size-sm text-muted">
+          </p><div class="font-size-sm mb-4"><span class="text-heading font-weight-medium mr-1">联系人:</span><span class="text-muted">{{createdUser.name}}</span></div>
+          <div class="font-size-sm mb-4"><span class="text-heading font-weight-medium mr-1">电子邮箱:</span><span class="text-muted">{{createdUser.email}}</span></div>
+          <div class="font-size-sm mb-4"><span class="text-heading font-weight-medium mr-1">移动电话:</span><span class="text-muted">{{createdUser.phone}}</span></div>
+          <div class="font-size-sm mb-4"><span class="text-heading font-weight-medium mr-1">微信:</span><span class="text-muted">{{createdUser.wechat}}</span></div>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  
+</script>
+  <!-- {{#each attributes}}
+{{#isBasicInfo type}}
+<li class="col-sm-12 col-md-6 col-lg-4"><span class="text-heading font-weight-medium mr-1">{{name}}：</span><span class="text-muted">{{value}}</span></li>
+{{/isBasicInfo}}
+{{/each}} -->
+  <script type="text/template" id="basicInfoTemplate">
+      <div class="row align-items-center py-md-3 border-bottom mb-4 pb-2">
+        <div class="col-lg-3 col-md-6 order-md-1">
+          <h4 class="mb-4 pb-2">基本信息</h4>
+        </div>
+        <div class="col-lg-9 col-md-6 py-4 order-md-2">
+          <ul class="font-size-sm pl-4 row">
+            <li class="col-sm-12 col-md-6 col-lg-3"><span class="text-heading font-weight-medium mr-1">房型：</span><span class="text-muted">{{getAttributeByName attributes '房间'}}{{getAttributeByName attributes '厅'}}{{getAttributeByName attributes '卫'}}</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-3"><span class="text-heading font-weight-medium mr-1">大小：</span><span class="text-muted">{{size}}㎡</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-6"><span class="text-heading font-weight-medium mr-1">价格：</span><span class="font-weight-normal text-accent mr-1">{{price}}<small>元/月</small></span></li>
+            <li class="col-sm-12 col-md-6 col-lg-3"><span class="text-heading font-weight-medium mr-1">楼层：</span><span class="text-muted">{{showFloor floor total_floor}}</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-3"><span class="text-heading font-weight-medium mr-1">电梯：</span><span class="text-muted">{{getAttributeByName attributes '电梯'}}</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-6"><span class="text-heading font-weight-medium mr-1">装修：</span><span class="text-muted">{{getAttributeByName attributes '装修'}}</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-3"><span class="text-heading font-weight-medium mr-1">入住：</span><span class="text-muted">{{getAttributeByName attributes '入住'}}</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-3"><span class="text-heading font-weight-medium mr-1">佣金：</span><span class="text-muted">{{getAttributeByName attributes '佣金'}}</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-6"><span class="text-heading font-weight-medium mr-1">特色：</span><span class="text-muted">{{getAttributeByName attributes '特色'}}</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-3"><span class="text-heading font-weight-medium mr-1">联系：</span><span class="font-weight-normal text-accent mr-1">{{wechat}}</span></li>
+            <li class="col-sm-12 col-md-6 col-lg-3"><span class="text-heading font-weight-medium mr-1">电话：</span><span class="font-weight-normal text-accent mr-1"><a href="tel:{{phone}}">{{phone}}</a></span></li>
+            <li class="col-sm-12 col-md-6 col-lg-6"><span class="text-heading font-weight-medium mr-1">看房：</span><span class="text-muted">{{getAttributeByName attributes '看房'}}</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row align-items-center py-md-3 border-bottom mb-4 pb-2">
+        <div class="col-lg-3 col-md-6 order-md-1">
+          <h4 class="mb-4 pb-2">房源描述</h4>
+        </div>
+        <div class="col-lg-9 col-md-6 py-4 order-md-2">
+          {{html comment}}
+        </div>
+      </div>
+      <div class="row align-items-center py-md-3 border-bottom mb-4 pb-2">
+        <div class="col-lg-3 col-md-6 order-md-1">
+          <h4 class="mb-4 pb-2">配套设施</h4>
+        </div>
+        <div class="col-lg-9 col-md-6 py-4 order-md-2">
+          <ul class="font-size-sm pl-4 row">
+            {{#each attributes}}
+            {{#isFacilities type}}
+            {{#if value}}
+            <li class="col-6 col-lg-4"><span class="text-heading font-weight-medium mr-1">{{name}}</span></li>
+            {{/if}}
+            {{/isFacilities}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+  </script>
+
+  <script type="text/template" id="nearbyCompoundTemplate">
+    <div class="row align-items-center py-md-3 border-bottom mb-4 pb-2">
+      <div class="col-lg-12 col-md-12 order-md-1">
+        <h4 class="mb-4 pb-2">同小区房源</h4>
+      </div>
+      <div class="col-lg-12 col-md-12 py-4 order-md-2">
+        {{#if apartments}}
+          {{#each apartments}}
+          <div class="card product-card product-list">
+            <div class="d-sm-flex align-items-center"><a class="product-list-thumb" href="property-single-v1.html?id={{id}}"><img src="https:{{photos.[0].src}}" alt="Product"></a>
+              <div class="card-body py-2"><a class="product-meta d-block font-size-xs pb-1" >{{../name}}</a>
+                <h3 class="product-title font-size-base"><a href="property-single-v1.html?id={{id}}">{{title}}</a></h3>
+                <div class="d-flex justify-content-between">
+                  <div class="product-price"><span class="text-accent">￥{{price}}</span></div>
+                  <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="pt-3 mt-3" />
+          {{/each}}
+        {{else}}
+        <div>暂无</div>
+        {{/if}}
+        
+      </div>
+    </div>
+  </script>
+
+  <script type="text/template" id="productGalleryTemplate">
+      <div class="detail-pictviewer">
+        <div class="detail-pict-present">
+          <div class="left-navi"></div>
+          <div class="right-navi"></div>
+          <img src="https:{{photos.[0].src}}">
+        </div>
+        <div class="detail-pict-navi">
+          <ul style="width: 1260px; padding:0px; left: 0px">
+          {{#each photos}}
+            {{#if @first}} 
+              <li style="width: 140px;"><a href="javascript:;"><img src="https:{{src}}" class="selected"></a></li>  
+            {{else}} 
+              <li style="width: 140px;"><a href="javascript:;"><img src="https:{{src}}" class=""></a></li>     
+            {{/if}}
+            {{#unless @first}} 
+            {{/unless}}
+          {{/each}}
+          </ul>
+        </div>
+      </div>
+      <script>
+        function calculatePictSize(){
+          $(".detail-pict-navi li").width($(".detail-pictviewer").width()/5);
+          $(".detail-pict-navi ul").width($(".detail-pict-navi li").width()*$(".detail-pict-navi li").length);		
+          $(".detail-pict-present .left-navi").on("click",function (e){
+            var itemIndex=Math.round($(".detail-pict-navi img.selected").position().left/$(".detail-pict-navi li").width());
+            if(itemIndex<=0){
+              return;
+            }
+            else{
+              $(".detail-pict-navi li:eq("+(itemIndex-1)+") img").trigger("click");
+            }
+          });
+        }
+        function renderPictNavi(index,total){
+          $(".detail-pict-present .left-navi").show();  
+          $(".detail-pict-present .right-navi").show();  
+          if(index==0){
+            $(".detail-pict-present .left-navi").hide();  
+          }
+          if(index==total-1){
+            $(".detail-pict-present .right-navi").hide();  
+          }
+        }
+        $(document).ready(function(){
+          $('#qr').on('mouseenter', function() {
+            $('#wechat-qr').css('display', 'block')
+          } );
+          $('#qr').on('mouseleave', function() {
+            $('#wechat-qr').css('display', 'none')
+          });
+          calculatePictSize();
+          $(".detail-pictviewer").height($(".detail-pictviewer").width() / 1.5)
+          $(window).resize(function () {
+            console.log("resize")
+            $(".detail-pictviewer").height($(".detail-pictviewer").width() / 1.5)
+            calculatePictSize()
+          }); 
+          renderPictNavi(0,$(".detail-pict-navi li").length)
+        })
+        
+        $(".detail-pict-present .right-navi").on("click",function (e){
+          var itemIndex=Math.round($(".detail-pict-navi img.selected").position().left/$(".detail-pict-navi li").width());
+          if(itemIndex >= $(".detail-pict-navi li").length-1){
+            return;
+          }
+          else{
+            $(".detail-pict-navi li:eq("+(itemIndex+1)+") img").trigger("click");
+          }
+        });      
+        
+        $(".detail-pict-navi img").on("click",function (e){
+          $(".detail-pict-navi img").each(function(){
+            $(this).removeClass("selected");
+          });
+          $(this).addClass("selected");
+          $(".detail-pict-present > img").attr("src",$(this).attr("src"));
+          var itemIndex=$(".detail-pict-navi img.selected").position().left/$(".detail-pict-navi li").width();
+          renderPictNavi(itemIndex,$(".detail-pict-navi li").length)
+
+          //selected location logic
+          if($(".detail-pict-navi li").length>4){
+            var totalCount=$(".detail-pict-navi li").length;
+            var left;
+            switch(Math.round(itemIndex))
+            {
+              case 0:
+              case 1:
+                left=0;
+                break;
+              case totalCount-2:
+              case totalCount-1:
+                left=-($(".detail-pict-navi li").width()*(totalCount-5));
+                break;
+              default:
+                left=-$(".detail-pict-navi img.selected").position().left+$(".detail-pict-navi li").width()*2;
+                break;
+            }
+            $(".detail-pict-navi ul").animate({"left":left+"px"},200);
+          }
+          
+          else{
+          //no command
+          }
+      
+        });
+      </script>
+
+  </script>
+  <script>
+    var data;
+    const fsClients = client.service("apartments");
+    fsClients.get(Request.QueryString("id")).then((response) => {
+      registerHandlebarsHelper();
+      $("#detailTitle").html(`${response.compound.district}  ${response.compound.name}  ${response.title}`);
+      console.log(response)
+      //product gallery
+      var tpl = $("#productGalleryTemplate").html();
+      var template = Handlebars.compile(tpl);
+      var html = template(response);
+      $("#productGallery").html(html);
+
+      //product detail
+      tpl = $("#productDetailTemplate").html();
+      template = Handlebars.compile(tpl);
+      html = template(response);
+      $("#productDetail").html(html);
+
+      //basic info
+      tpl = $("#basicInfoTemplate").html();
+      template = Handlebars.compile(tpl);
+      html = template(response);
+      $("#basicInfo").html(html);
+
+
+      //https://zufang.xiaobb.com.cn/api/v1/compounds/f7035dbd-f4c9-4e72-af33-ef3a612d6982
+      const fsClientsCompound = client.service("compounds");
+      fsClientsCompound.get(response.compoundId).then((response2) => {
+        //nearby compounds
+        tpl = $("#nearbyCompoundTemplate").html();
+        template = Handlebars.compile(tpl);
+        response2.apartments = response2.apartments.filter(x => x.id != Request.QueryString("id"))
+        html = template(response2);
+        $("#nearbyCompound").html(html);
+      });
+
+      //加载地图信息
+      console.log(response.compound.location)
+      compoundname = response.compound.name
+      cpoint = response.compound.location.split(",")
+      map = new AMap.Map("amapContainer", {
+        resizeEnable: true,
+        center: cpoint,
+        zoom: 16,
+        scrollWheel: false,
+      });
+
+      AMap.service(["AMap.PlaceSearch"], function () {
+        //构造地点查询类
+        placeSearch = new AMap.PlaceSearch({
+          pageSize: 5, // 单页显示结果条数
+          pageIndex: 1, // 页码
+          map: map, // 展现结果的地图实例
+          panel: "amapPanel", // 结果列表将在此容器中进行展示。
+          renderStyle: "default",
+          autoFitView: false // 是否自动调整地图视野使绘制的 Marker点都处于视口的可见范围
+        });
+        SearchPlace("地铁站");
+      });
+    });
+  </script>
+  <!-- Footer-->
+    <footer class="bg-dark pt-5">
+      <div class="container">
+          <div class="row pb-2">
+            <div class="col-md-6 pb-4 font-size-xs text-light opacity-50 text-center text-md-left">© All rights reserved. Made by <a class="text-light" href="#" target="_blank">SHZLFY</a>
+             　<br />
+             <p style="font-size: 15px;">
+              <i class="czi-support"></i><span class="text-muted mr-1">联系电话</span><a class="topbar-link" href="tel:13764866831">13764866831</a></p>
+            </div>
+          
+            <div class="col-md-6 text-center text-md-right mb-4">
+                <span style="color: #fff; font-size: 13px"> 微信二维码</span>
+              <div class="mb-3"> 
+                 
+                  <img id="wechat-qr" style=" width: 120px; box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px" src="img/qr.jpg" />
+            </div>
+          </div>
+      </div>
+    </footer>  <!-- Toolbar for handheld devices-->
+  <div class="cz-handheld-toolbar">
+    <div class="d-table table-fixed w-100"><a class="d-table-cell cz-handheld-toolbar-item" href="#navbarCollapse"
+        data-toggle="collapse" onclick="window.scrollTo(0, 0)"><span class="cz-handheld-toolbar-icon"><i
+            class="czi-menu"></i></span><span class="cz-handheld-toolbar-label">Menu</span></a>
+    </div>
+  </div>
+  <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span
+      class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon czi-arrow-up">
+    </i></a>
+  <!-- JavaScript libraries, plugins and custom scripts-->
+  <script src="js/vendor.min.js"></script>
+  <script src="js/theme.min.js"></script>
+  <script src="https://webapi.amap.com/maps?v=1.4.15&amp;key=e55a29c052feca1c4f2de276a34c70fa"></script>
+  <script src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+  <link rel="stylesheet" media="screen" href="css/vendor.min.css">
+  <link rel="stylesheet" media="screen" id="main-styles" href="css/theme.min.css">
+</body>
+
+</html>

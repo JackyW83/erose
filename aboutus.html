@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> 上海租凭房源
+    </title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="上海租凭房源">
+    <meta name="keywords" content="上海,租房,整租,涉外高端,合租,房源">　
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" color="#fe6a6a" href="safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+    <link rel="stylesheet" media="screen" href="css/vendor.min.css">
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" id="main-styles" href="css/theme.min.css">
+    <style>
+      .short {
+        display: inline-block !important;
+        width: 70px;
+      }
+      .middle {
+        display: inline-block !important;
+        width: 136px;
+      }
+      .simplebar-content {
+        padding: 4px 8px 0px 0px"
+      }
+      .search-short {
+        padding-bottom: .2rem !important;
+        margin-top: -16px;
+      }
+      .widget-title {
+        margin-bottom: .2rem;
+      }
+      .pb-4, .py-4 {
+        padding-bottom: .5rem !important;
+      }
+      .d-block {
+        display: inline-block !important;
+        margin-right: 6px;
+      }
+      .czi-map{
+        height: 20px;
+      }
+      .navbar-expand-lg  {
+        padding-bottom: 8px;
+      }
+      #footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+      }
+      @media (max-width: 991.98px) {
+        #logo_text {
+          margin-top: -8px;
+        }
+        #footer {
+          position: relative;
+        }
+      }
+      .skeleton-pulse {
+        height: 40px; 
+        background-color: #eaeaea;
+        width: 230px;
+        border-radius: 5px;
+        margin-bottom: 16px;
+        margin-top: 8px;
+        animation: skeleton-pulse 1.5s ease-in-out 0.5s infinite;
+      }
+      @keyframes skeleton-pulse{0%{opacity:1}50%{opacity:.4}100%{opacity:1}}
+    </style>
+
+<script src="https://webapi.amap.com/maps?v=1.4.15&amp;key=e55a29c052feca1c4f2de276a34c70fa"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
+<script src="https://unpkg.com/@feathersjs/client@^3.0.0/dist/feathers.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/feathers.js"></script>
+<script src="./js/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Navbar 1 Level (Light)-->
+    <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+    <header class="bg-light box-shadow-sm navbar-sticky" style="margin-top: -15px;">
+      <div　style="padding: 0px" class="navbar navbar-expand-lg navbar-light">
+        <div class="container"><a class="navbar-brand d-none d-sm-block mr-4 order-lg-1" href="property-list-ls.html" style="min-width: 7rem;"><img style="display: none;" width="142" src="img/logo-dark.png" alt="Cartzilla"/></a>
+          <a href="index.html"> <p style="font-size: 16px; font-weight: 700; color: #373f50">SHZLFY</p></a>
+          <a style="position: absolute; top: 16px; width: 120px " href="index.html"> 
+             <p id="logo_text" style="position: absolute; top: 26px; font-size: 14px; color:#4b566b ">
+              上海租凭房源
+             </p></a>
+          <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+            <div class="topbar-text text-nowrap d-none d-md-inline-block"><i class="czi-support"></i><span class="text-muted mr-1"  >联系电话</span><a style="font-weight: 500; color: #373f50 !important" class="topbar-link" href="tel:13764866831">13764866831</a>
+              <img id="qr" style="height: 30px; margin-top: -5px" src="img/qr-code.svg" />
+              <img id="wechat-qr" style="z-index: 1000; display: none; position: absolute; width: 160px; top: 70px; right: 30px; box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px" src="img/qr.png" />
+            </div>
+          </div>
+          <div class="collapse navbar-collapse mr-auto order-lg-2" id="navbarCollapse">
+            <!-- Primary menu-->
+            <ul class="navbar-nav">
+              <li id="nav-rent"　class="nav-item"><a class="nav-link dropdown-toggle" href="index.html?tag=rent">整租</a></li>
+              <li id="nav-share" class="nav-item"><a  class="nav-link dropdown-toggle" href="index.html?tag=share">合租</a></li>
+              <li id="nav-highend" class="nav-item"><a  class="nav-link dropdown-toggle" href="index.html?tag=highend">涉外高端</a></li>
+              <li id="nav-aboutus" class="nav-item"><a  class="nav-link dropdown-toggle" href="aboutus.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+ 
+    <!-- Page Content-->
+    <main id="main" style="margin-top: 64px;" class="container pb-5 mb-2 mb-md-4">
+     
+    </main>
+    
+    <script>
+      var data;
+      const fsClients = client.service("home");
+      //{query:{"props['0d8dfadb-593e-4fc9-9396-38d446a42fbf']":"高楼层"} }
+       
+       
+      $(document).ready(function(){
+        fsClients.get(1).then((response)=>{ 
+          $('#main').html(response.content)
+        });
+      });
+ 
+    </script>
+
+
+    <!-- Footer-->
+    <footer id="footer" class="bg-dark pt-5">
+      <div class="container">
+          <div class="row pb-2">
+            <div class="col-md-6 pb-4 font-size-xs text-light opacity-50 text-center text-md-left">© All rights reserved. Made by <a class="text-light" href="#" target="_blank">SHZLFY</a>
+             　<br />
+             <p style="font-size: 15px;">
+              <i class="czi-support"></i><span class="text-muted mr-1">联系电话</span><a class="topbar-link" href="tel:13764866831">13764866831</a></p>
+            </div>
+          
+            <div class="col-md-6 text-center text-md-right mb-4">
+                <span style="color: #fff; font-size: 13px"> 微信二维码</span>
+              <div class="mb-3">  
+                  <img id="wechat-qr" style=" width: 120px; box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px" src="img/qr.png" />
+            </div>
+          </div>
+      </div>
+    </footer>
+    <!-- Toolbar for handheld devices-->
+    <div class="cz-handheld-toolbar">
+      <div class="d-table table-fixed w-100">
+           
+        <a class="d-table-cell cz-handheld-toolbar-item" href="#navbarCollapse" data-toggle="collapse" onclick="window.scrollTo(0, 0)"><span class="cz-handheld-toolbar-icon"><i class="czi-menu"></i></span><span class="cz-handheld-toolbar-label">菜单</span></a>
+      </div>
+    </div>
+    <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon czi-arrow-up">   </i></a>
+    <!-- JavaScript libraries, plugins and custom scripts-->
+    <script src="js/vendor.min.js"></script>
+    <script src="js/theme.min.js"></script>
+
+  </body>
+</html>
