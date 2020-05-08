@@ -1562,7 +1562,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   }]);
 });
 
-var host = 'http://zufang.xiaobb.com.cn/api/v1';
+var host = 'https://zufang.xiaobb.com.cn/api/v1';
 console.log(host);
 var client = feathers();
 var restClient = feathers.rest(host);
